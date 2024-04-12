@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt algorytmy</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <section class="cubic-equation">
+        <div class="cubic-equation-container">
+            <p class="cubic-equation-text">
+                ax<sup>3</sup> + bx<sup>2</sup> + cx + d = 0
+            </p>
+            <p class="cubic-equation-input">
+                <input type="text" id="a-cubic" />x<sup>3</sup> + <input type="text" id="b-cubic" />x<sup>2</sup> + <input type="text" id="c-cubic" />x + <input type="text" id="d-cubic"/> = 0
+            </p>
+            <button type="submit" id="button-cubic" onclick="cubicEquation()">Oblicz</button>
+        </div>
+        <div id="output-cubic" class="cubic-equation-output output"></div>
+    </section>
+    <section class="eratosnes-sieve">
+        <div class="eratosnes-sieve-container">
+            <p>Podaj liczbę końcową przediału: <input type="text" id="prime-number-input"/></p>
+            <button type="submit" id="button-prime" onclick="eratosnesSieve()">Oblicz</button>
+        </div>
+        <div id="output-prime" class="eratosnes-sieve-output output"></div>
+    </section>
+    <section class="quintic-equation">
+        <div class="quintic-equation-container">
+            <p>ax<sup>5</sup> + bx<sup>4</sup> + cx<sup>3</sup> + dx<sup>2</sup> + ex + f = 0</p>
+            <p>
+                <input type="text" id="a-quintic" />x<sup>5</sup> + <input type="text" id="b-quintic" />x<sup>4</sup> + <input type="text" id="c-quintic" />x<sup>3</sup> + <input type="text" id="d-quintic" />x<sup>2</sup> + <input type="text" id="e-quintic"/>x + <input type="text" id="f-quintic"/> = 0
+            </p>
+            <div class="quintic-equation-wrapper">
+                <label for="min-quintic">Min</label>
+                <input type="text" id="min-quintic" />
+                <label for="max-quintic">Max</label>
+                <input type="text" id="max-quintic" />
+                <label for="step-quintic">Step</label>
+                <input type="text" id="step-quintic" />
+                <label for="precision-quintic">Precision</label>
+                <input type="text" id="precision-quintic" />
+            </div>
+            <button type="submit" id="button-quintic" onclick="quinticEquation()">Oblicz</button>
+        </div>
+        <div id="output-quintic" class="quintic-equation-output output"></div>
+    </section>
+    <section class="monte-carlo">
+        <div class="monte-carlo-container">
+            <p>Dla funkcji f(x) = <i>sin</i>x + <i>sin</i>2x + <i>sin</i>4x</p>
+            <p>Podaj dokładność obliczenia całki: <input type="text" id="monte-carlo-input"/></p>
+            <button type="submit" id="button-monte-carlo" onclick="monteCarlo()">Oblicz</button>
+        </div>
+        <div id="output-monte-carlo" class="monte-carlo-output output"></div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>

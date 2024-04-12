@@ -1,0 +1,91 @@
+input {
+    width: 50px;
+    border: 1px solid darkcyan;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+div {
+    margin-top: 15px;
+}
+
+button {
+    padding: 6px 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    background: cadetblue;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.cubic-equation {
+    width: 1000px;
+}
+
+.cubic-equation-container {
+    padding: 24px 60px;
+}
+
+.output {
+    padding: 24px 60px;
+    width: 300px;
+    height: auto;
+    border: 1px dotted lightseagreen;
+    border-radius: 8px;
+}
+
+.cubic-equation-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+}
+
+.cubic-equation-input {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+}
+
+.eratosnes-sieve {
+    width: 900px;
+}
+
+.eratosnes-sieve-container {
+    padding: 24px 60px;
+}
+
+.quintic-equation {
+    width: 1200px;
+}
+
+.quintic-equation-container {
+    padding: 24px 60px;
+}
+
+.quintic-equation-wrapper {
+    margin-bottom: 12px;
+}
+
+.monte-carlo {
+    width: 900px;
+}
+
+.monte-carlo-container {
+    padding: 24px 60px;
+}
+
+
+
