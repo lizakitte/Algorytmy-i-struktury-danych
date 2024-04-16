@@ -155,21 +155,15 @@ function monteCarlo() {
 
         if(y > solveExampleFunction(x)) {
             countAbove1++;
-            console.log('l1 = ' + countAbove1);
         }
         else if(y < solveExampleFunction(x)) {
             countBelow1++;
-            console.log('l2 = ' + countBelow1);
         }
 
         const integral1 = countIntegral(a, b, h, countAbove1, countBelow1);
         const integral2 = countIntegral(a, b, h, countAbove2, countBelow2);
-        console.log('in1 = ' + integral1);
-        console.log('in2 = ' + integral2);
 
-        if((Math.abs(Math.abs(integral2) - Math.abs(integral1)) < 0.0001 ) && (integral1 != 0) && (integral2 != 0)) {
-            console.log(integral1);
-            console.log(integral2);
+        if((Math.abs(Math.abs(integral2) - Math.abs(integral1)) < precision) && (integral1 != 0) && (integral2 != 0)) {
             document.getElementById("output-monte-carlo").innerText = integral2;
             break;
         }
