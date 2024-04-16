@@ -181,3 +181,88 @@ function solveExampleFunction(x) {
 function countIntegral(a, b, h, l1, l2) {
     return (b - a) * h * l2 / (l1 + l2);
 }
+
+
+function salesman() {
+    const n = 100;
+    const min = 10;
+    const max = 90;
+    const arr = random2DArray(n, min, max);
+
+    let parent = randomIntArray(n);
+    let amountParent = calculateAmount(arr, parent);
+
+    let child = parent;
+
+    let count = 0;
+
+    while (true) {  
+        //swapping random two values
+        let i = Math.floor(getRandomArbitrary(0, n));
+        let j = Math.floor(getRandomArbitrary(0, n));
+
+        if(i != j) {
+            let modification1 = parent[i];
+            let modification2 = parent[j];
+
+            child[i] = modification2;
+            child[j] = modification1;
+        }
+        else continue;
+
+        let amountChild = calculateAmount(arr, child);
+
+        if(amountChild < amountParent) {
+            parent = child;
+            amountParent = amountChild;
+        }
+
+        count++;
+
+        if(count > 10000) {
+            document.getElementById("output-salesman").innerText = amountParent;
+            break;
+        }
+    }
+}
+
+function random2DArray (n, min, max) {
+    const arr = new Array(n);
+    for (let i = 0; i < n; i++) {
+        arr[i] = arr.map(_ => getRandomArbitrary(min, max));
+    }
+    return arr;
+}
+
+function randomIntArray (n) {
+    const arr = new Array(n);
+    for (let i = 0; i < n; i++) {
+        while (true) {
+            const el = Math.floor(getRandomArbitrary(0, n));
+            if(arr.find(x => x === el) === undefined) {
+                arr[i] = el;
+                break;
+            }
+        }
+    }
+    return arr;
+}
+
+function calculateAmount (arr2D, arr) {
+    let amount = 0;
+    for(let idx = 0; idx < arr.length - 1; idx++) {
+        let i = arr.findIndex(x => x === idx);
+        let j = arr.findIndex(x => x === idx + 1);
+
+        if(i > j) {
+            amount += (arr2D[i][j]);
+        }
+        else if(i < j){
+            amount += (arr2D[j][i]);
+        }
+        else {
+            amount += 0;
+        }
+    }
+    return amount;
+}
